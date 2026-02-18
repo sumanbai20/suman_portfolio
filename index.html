@@ -64,21 +64,27 @@
             box-shadow: 0 20px 40px rgba(99,102,241,0.2);
         }
         .demo-gif-wrapper {
-            width: 100%;
-            aspect-ratio: 9/16;
-            max-height: 320px;
-            background: #0d0d1a;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            overflow: hidden;
-            position: relative;
-        }
-        .demo-gif-wrapper img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
+    width: 100%;
+    height: 500px;
+    background: #0d0d1a;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    position: relative;
+}
+.demo-gif-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+Bas yeh 2 changes karo → GitHub pe commit karo → ho jaayega! ✅
+Kya change hua:
+
+aspect-ratio hata diya — ab fixed height hai
+object-fit: cover → object-fit: contain — ab puri GIF dikh rahi hogi, crop nahi hogi
+
         .demo-gif-placeholder {
             display: flex;
             flex-direction: column;
@@ -843,3 +849,4 @@
 </body>
 
 </html>
+
