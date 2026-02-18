@@ -8,16 +8,146 @@
         content="Suman Bai - React Native Developer Portfolio. Expert in mobile app development with experience at QF Network.">
     <title>Suman Bai | React Native Developer</title>
 
-    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
         rel="stylesheet">
 
-    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
     <link rel="stylesheet" href="styles.css">
+
+    <style>
+        .business-impact {
+            margin-top: 1.5rem;
+            background: linear-gradient(135deg, rgba(99,102,241,0.12), rgba(139,92,246,0.08));
+            border-left: 4px solid #6366f1;
+            border-radius: 0 12px 12px 0;
+            padding: 1rem 1.25rem;
+        }
+        .business-impact h4 {
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: #6366f1;
+            margin: 0 0 0.4rem;
+        }
+        .business-impact p {
+            font-size: 0.9rem;
+            color: #e2e8f0;
+            margin: 0;
+            line-height: 1.6;
+        }
+
+        .micro-demos {
+            padding: 5rem 0;
+            background: #0f0f1a;
+        }
+        .micro-demos .section-title { text-align: center; }
+        .micro-demos .section-subtitle { text-align: center; color: #94a3b8; max-width: 580px; margin: 0 auto 3rem; }
+        .demos-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 2.5rem;
+        }
+        .demo-card {
+            background: #1a1a2e;
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 16px;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .demo-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 20px 40px rgba(99,102,241,0.2);
+        }
+        .demo-gif-wrapper {
+            width: 100%;
+            aspect-ratio: 9/16;
+            max-height: 320px;
+            background: #0d0d1a;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            position: relative;
+        }
+        .demo-gif-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .demo-gif-placeholder {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 0.75rem;
+            color: #475569;
+            width: 100%;
+            height: 100%;
+            min-height: 220px;
+        }
+        .demo-gif-placeholder i { font-size: 2.5rem; color: #6366f1; }
+        .demo-gif-placeholder span { font-size: 0.8rem; letter-spacing: 0.05em; }
+        .demo-badge {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: rgba(99,102,241,0.9);
+            color: #fff;
+            font-size: 0.65rem;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            padding: 3px 8px;
+            border-radius: 20px;
+            text-transform: uppercase;
+        }
+        .demo-card-body { padding: 1.25rem; }
+        .demo-card-body h4 {
+            font-size: 1rem;
+            font-weight: 600;
+            color: #f1f5f9;
+            margin: 0 0 0.4rem;
+        }
+        .demo-card-body p {
+            font-size: 0.82rem;
+            color: #94a3b8;
+            margin: 0;
+            line-height: 1.5;
+        }
+
+        .hero-cta-group {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin-top: 0.5rem;
+        }
+        .btn-consultation {
+            background: transparent;
+            border: 2px solid #6366f1;
+            color: #a5b4fc;
+            padding: 0.75rem 1.5rem;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            white-space: nowrap;
+        }
+        .btn-consultation:hover {
+            background: #6366f1;
+            color: #fff;
+            box-shadow: 0 0 20px rgba(99,102,241,0.4);
+        }
+        .btn-consultation i { font-size: 0.85rem; }
+    </style>
 </head>
 
 <body>
@@ -32,6 +162,7 @@
                 <li><a href="#about" class="nav-link">ABOUT ME</a></li>
                 <li><a href="#services" class="nav-link">SERVICES</a></li>
                 <li><a href="#projects" class="nav-link">PROJECTS</a></li>
+                <li><a href="#micro-demos" class="nav-link">DEMOS</a></li>
                 <li><a href="#contact" class="nav-link">CONTACT US</a></li>
             </ul>
             <button class="nav-toggle" id="nav-toggle">
@@ -53,7 +184,12 @@
             <p class="hero-tagline">
                 Driven by curiosity, powered by <strong>creativity.</strong>
             </p>
-            <a href="#contact" class="btn btn-primary">Hire Me</a>
+            <div class="hero-cta-group">
+                <a href="#contact" class="btn btn-primary">Hire Me</a>
+                <a href="#contact" class="btn-consultation">
+                    <i class="fas fa-calendar-alt"></i> Book a Free 15-min AI Consultation
+                </a>
+            </div>
         </div>
     </section>
 
@@ -100,7 +236,6 @@
 
                 <div class="about-image">
                     <div class="image-wrapper">
-                        <!-- Replace this with actual image -->
                         <div class="image-placeholder">
                             <img src="profile.jpg" alt="Suman Bai - React Native Developer">
                         </div>
@@ -126,80 +261,45 @@
                 reality.</p>
 
             <div class="services-grid">
-                <!-- 1. Mobile App Development -->
                 <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-mobile-alt"></i>
-                    </div>
+                    <div class="service-icon"><i class="fas fa-mobile-alt"></i></div>
                     <h3>Mobile App Development</h3>
-                    <p>Building high-performance, native-like mobile applications using React Native and modern
-                        JavaScript.</p>
+                    <p>Building high-performance, native-like mobile applications using React Native and modern JavaScript.</p>
                 </div>
-
-                <!-- 2. Cross-Platform Apps -->
                 <div class="service-card featured">
-                    <div class="service-icon">
-                        <i class="fab fa-react"></i>
-                    </div>
+                    <div class="service-icon"><i class="fab fa-react"></i></div>
                     <h3>Cross-Platform Apps</h3>
                     <p>Developing seamless applications for both iOS and Android from a single, efficient codebase.</p>
                 </div>
-
-                <!-- 3. API Integration -->
                 <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-server"></i>
-                    </div>
+                    <div class="service-icon"><i class="fas fa-server"></i></div>
                     <h3>API Integration</h3>
-                    <p>Connecting your app with robust RESTful APIs and third-party services for dynamic functionality.
-                    </p>
+                    <p>Connecting your app with robust RESTful APIs and third-party services for dynamic functionality.</p>
                 </div>
-
-                <!-- 4. Firebase Integration -->
                 <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-fire"></i>
-                    </div>
+                    <div class="service-icon"><i class="fas fa-fire"></i></div>
                     <h3>Firebase Integration</h3>
                     <p>Implementing secure Authentication, Realtime Database, Firestore, and Cloud Functions.</p>
                 </div>
-
-                <!-- 5. UI / UX Implementation -->
                 <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-paint-brush"></i>
-                    </div>
+                    <div class="service-icon"><i class="fas fa-paint-brush"></i></div>
                     <h3>UI / UX Implementation</h3>
                     <p>Translating Figma designs into pixel-perfect, responsive, and interactive mobile interfaces.</p>
                 </div>
-
-                <!-- 6. App Deployment -->
                 <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-cloud-upload-alt"></i>
-                    </div>
+                    <div class="service-icon"><i class="fas fa-cloud-upload-alt"></i></div>
                     <h3>App Deployment</h3>
-                    <p>Handling the complete submission and publishing process for Google Play Store and Apple App
-                        Store.</p>
+                    <p>Handling the complete submission and publishing process for Google Play Store and Apple App Store.</p>
                 </div>
-
-                <!-- 7. Performance Optimization -->
                 <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-tachometer-alt"></i>
-                    </div>
+                    <div class="service-icon"><i class="fas fa-tachometer-alt"></i></div>
                     <h3>Performance Optimization</h3>
                     <p>Improving app speed, reducing bundle size, and fixing bugs for a smooth user experience.</p>
                 </div>
-
-                <!-- 8. AI-Powered Features -->
                 <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-brain"></i>
-                    </div>
+                    <div class="service-icon"><i class="fas fa-brain"></i></div>
                     <h3>AI-Powered Features</h3>
-                    <p>Integrating paid premium features like OCR, chatbots, and image recognition using OpenAI and
-                        other ML models.</p>
+                    <p>Integrating paid premium features like OCR, chatbots, and image recognition using OpenAI and other ML models.</p>
                 </div>
             </div>
         </div>
@@ -213,17 +313,15 @@
             <p class="section-subtitle">Here are some of my favorite projects that showcase my skills in mobile
                 development and problem-solving abilities.</p>
 
-            <!-- Featured Project - Pocket Receipt -->
+            <!-- Project 1: AI Expense Tracker -->
             <div class="featured-project">
                 <div class="featured-project-info">
                     <span class="project-label">Featured Project</span>
-                    <h3 class="featured-title">Pocket Receipt</h3>
+                    <h3 class="featured-title">AI Expense Tracker <span style="font-size:0.65em;opacity:0.75;">(Saves 5 hrs/week)</span></h3>
                     <p class="featured-description">
                         A comprehensive AI-powered receipt management system that revolutionizes how users track
-                        expenses.
-                        The app uses OpenAI GPT-4 Vision for intelligent OCR to automatically extract store names,
-                        dates,
-                        amounts, and line items from receipt photos.
+                        expenses. The app uses OpenAI GPT-4 Vision for intelligent OCR to automatically extract store
+                        names, dates, amounts, and line items from receipt photos.
                     </p>
 
                     <div class="featured-features">
@@ -258,51 +356,39 @@
                     <div class="phone-carousel">
                         <div class="phone-mockup">
                             <div class="phone-notch"></div>
-                            <div class="phone-screen">
-                                <img src="projects/pocket-receipt-1.png" alt="Spending Dashboard">
-                            </div>
+                            <div class="phone-screen"><img src="projects/pocket-receipt-1.png" alt="Spending Dashboard"></div>
                             <span class="screen-label">Dashboard</span>
                         </div>
                         <div class="phone-mockup">
                             <div class="phone-notch"></div>
-                            <div class="phone-screen">
-                                <img src="projects/pocket-receipt-2.png" alt="Capture Receipt">
-                            </div>
+                            <div class="phone-screen"><img src="projects/pocket-receipt-2.png" alt="Capture Receipt"></div>
                             <span class="screen-label">Capture</span>
                         </div>
                         <div class="phone-mockup">
                             <div class="phone-notch"></div>
-                            <div class="phone-screen">
-                                <img src="projects/pocket-receipt-3.png" alt="AI Processing">
-                            </div>
+                            <div class="phone-screen"><img src="projects/pocket-receipt-3.png" alt="AI Processing"></div>
                             <span class="screen-label">AI Processing</span>
                         </div>
                         <div class="phone-mockup">
                             <div class="phone-notch"></div>
-                            <div class="phone-screen">
-                                <img src="projects/pocket-receipt-4.png" alt="Receipt Details">
-                            </div>
+                            <div class="phone-screen"><img src="projects/pocket-receipt-4.png" alt="Receipt Details"></div>
                             <span class="screen-label">OCR Results</span>
                         </div>
                         <div class="phone-mockup">
                             <div class="phone-notch"></div>
-                            <div class="phone-screen">
-                                <img src="projects/pocket-receipt-5.png" alt="Reports">
-                            </div>
+                            <div class="phone-screen"><img src="projects/pocket-receipt-5.png" alt="Reports"></div>
                             <span class="screen-label">Reports</span>
                         </div>
                         <div class="phone-mockup">
                             <div class="phone-notch"></div>
-                            <div class="phone-screen">
-                                <img src="projects/pocket-receipt-6.png" alt="Edit Details">
-                            </div>
+                            <div class="phone-screen"><img src="projects/pocket-receipt-6.png" alt="Edit Details"></div>
                             <span class="screen-label">Edit</span>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- Featured Project 2 - Holler App -->
+            <!-- Project 2: Holler App -->
             <div class="featured-project holler-theme">
                 <div class="featured-project-info">
                     <span class="project-label">Real-World Project</span>
@@ -345,65 +431,49 @@
                     <div class="phone-carousel">
                         <div class="phone-mockup">
                             <div class="phone-notch"></div>
-                            <div class="phone-screen">
-                                <img src="projects/holler-1.png" alt="Holler Login">
-                            </div>
+                            <div class="phone-screen"><img src="projects/holler-1.png" alt="Holler Login"></div>
                             <span class="screen-label">Login</span>
                         </div>
                         <div class="phone-mockup">
                             <div class="phone-notch"></div>
-                            <div class="phone-screen">
-                                <img src="projects/holler-2.png" alt="Bookings">
-                            </div>
+                            <div class="phone-screen"><img src="projects/holler-2.png" alt="Bookings"></div>
                             <span class="screen-label">Bookings</span>
                         </div>
                         <div class="phone-mockup">
                             <div class="phone-notch"></div>
-                            <div class="phone-screen">
-                                <img src="projects/holler-3.png" alt="Live Tracking">
-                            </div>
+                            <div class="phone-screen"><img src="projects/holler-3.png" alt="Live Tracking"></div>
                             <span class="screen-label">Live Map</span>
                         </div>
                         <div class="phone-mockup">
                             <div class="phone-notch"></div>
-                            <div class="phone-screen">
-                                <img src="projects/holler-4.png" alt="Calendar">
-                            </div>
+                            <div class="phone-screen"><img src="projects/holler-4.png" alt="Calendar"></div>
                             <span class="screen-label">Calendar</span>
                         </div>
                         <div class="phone-mockup">
                             <div class="phone-notch"></div>
-                            <div class="phone-screen">
-                                <img src="projects/holler-5.png" alt="Services">
-                            </div>
+                            <div class="phone-screen"><img src="projects/holler-5.png" alt="Services"></div>
                             <span class="screen-label">Services</span>
                         </div>
                         <div class="phone-mockup">
                             <div class="phone-notch"></div>
-                            <div class="phone-screen">
-                                <img src="projects/holler-6.png" alt="Location">
-                            </div>
+                            <div class="phone-screen"><img src="projects/holler-6.png" alt="Location"></div>
                             <span class="screen-label">Location</span>
                         </div>
                         <div class="phone-mockup">
                             <div class="phone-notch"></div>
-                            <div class="phone-screen">
-                                <img src="projects/holler-7.png" alt="Address">
-                            </div>
+                            <div class="phone-screen"><img src="projects/holler-7.png" alt="Address"></div>
                             <span class="screen-label">Address</span>
                         </div>
                         <div class="phone-mockup">
                             <div class="phone-notch"></div>
-                            <div class="phone-screen">
-                                <img src="projects/holler-8.png" alt="Settings">
-                            </div>
+                            <div class="phone-screen"><img src="projects/holler-8.png" alt="Settings"></div>
                             <span class="screen-label">Settings</span>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- Featured Project 3 - Lumera AI -->
+            <!-- Project 3: Lumera AI (with Business Impact) -->
             <div class="featured-project lumera-theme">
                 <div class="featured-project-info">
                     <span class="project-label">AI & Healthcare</span>
@@ -433,7 +503,13 @@
                         </div>
                     </div>
 
-                    <div class="featured-tech">
+                    <!-- Business Impact Block -->
+                    <div class="business-impact">
+                        <h4>📈 Business Impact</h4>
+                        <p>Built a RAG-based skin analysis tool that increased user retention by providing instant, dermatological advice without human intervention.</p>
+                    </div>
+
+                    <div class="featured-tech" style="margin-top:1.25rem;">
                         <span class="tech-tag">React Native</span>
                         <span class="tech-tag">GPT-4o-mini</span>
                         <span class="tech-tag">Pinecone</span>
@@ -446,89 +522,67 @@
                     <div class="phone-carousel">
                         <div class="phone-mockup">
                             <div class="phone-notch"></div>
-                            <div class="phone-screen">
-                                <img src="projects/lumera-1.png" alt="Lumera Onboarding">
-                            </div>
+                            <div class="phone-screen"><img src="projects/lumera-1.png" alt="Lumera Onboarding"></div>
                             <span class="screen-label">Get Started</span>
                         </div>
                         <div class="phone-mockup">
                             <div class="phone-notch"></div>
-                            <div class="phone-screen">
-                                <img src="projects/lumera-2.png" alt="Lumera Login">
-                            </div>
+                            <div class="phone-screen"><img src="projects/lumera-2.png" alt="Lumera Login"></div>
                             <span class="screen-label">Login</span>
                         </div>
                         <div class="phone-mockup">
                             <div class="phone-notch"></div>
-                            <div class="phone-screen">
-                                <img src="projects/lumera-3.png" alt="Patient Management">
-                            </div>
+                            <div class="phone-screen"><img src="projects/lumera-3.png" alt="Patient Management"></div>
                             <span class="screen-label">Patients</span>
                         </div>
                         <div class="phone-mockup">
                             <div class="phone-notch"></div>
-                            <div class="phone-screen">
-                                <img src="projects/lumera-4.png" alt="Skin Health Score">
-                            </div>
+                            <div class="phone-screen"><img src="projects/lumera-4.png" alt="Skin Health Score"></div>
                             <span class="screen-label">Health Score</span>
                         </div>
                         <div class="phone-mockup">
                             <div class="phone-notch"></div>
-                            <div class="phone-screen">
-                                <img src="projects/lumera-5.png" alt="Detailed Analysis">
-                            </div>
+                            <div class="phone-screen"><img src="projects/lumera-5.png" alt="Detailed Analysis"></div>
                             <span class="screen-label">Analysis</span>
                         </div>
                         <div class="phone-mockup">
                             <div class="phone-notch"></div>
-                            <div class="phone-screen">
-                                <img src="projects/lumera-6.png" alt="Multi-Skin Scan">
-                            </div>
+                            <div class="phone-screen"><img src="projects/lumera-6.png" alt="Multi-Skin Scan"></div>
                             <span class="screen-label">Multi-Scan</span>
                         </div>
                         <div class="phone-mockup">
                             <div class="phone-notch"></div>
-                            <div class="phone-screen">
-                                <img src="projects/lumera-7.png" alt="AI Suggestions">
-                            </div>
+                            <div class="phone-screen"><img src="projects/lumera-7.png" alt="AI Suggestions"></div>
                             <span class="screen-label">AI Support</span>
                         </div>
                         <div class="phone-mockup">
                             <div class="phone-notch"></div>
-                            <div class="phone-screen">
-                                <img src="projects/lumera-8.png" alt="AI Chat History">
-                            </div>
+                            <div class="phone-screen"><img src="projects/lumera-8.png" alt="AI Chat History"></div>
                             <span class="screen-label">Patient History</span>
                         </div>
                         <div class="phone-mockup">
                             <div class="phone-notch"></div>
-                            <div class="phone-screen">
-                                <img src="projects/lumera-9.png" alt="Chat Bot">
-                            </div>
+                            <div class="phone-screen"><img src="projects/lumera-9.png" alt="Chat Bot"></div>
                             <span class="screen-label">AI Assistant</span>
                         </div>
                         <div class="phone-mockup">
                             <div class="phone-notch"></div>
-                            <div class="phone-screen">
-                                <img src="projects/lumera-10.png" alt="Store">
-                            </div>
+                            <div class="phone-screen"><img src="projects/lumera-10.png" alt="Store"></div>
                             <span class="screen-label">Store</span>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- Featured Project 4 - MediConnect -->
+            <!-- Project 4: MediConnect -->
             <div class="featured-project mediconnect-theme">
                 <div class="featured-project-info">
                     <span class="project-label">Medical & Healthcare</span>
                     <h3 class="featured-title">MediConnect</h3>
                     <p class="featured-description">
                         A centralized medical records system designed to solve the problem of misplaced physical
-                        prescriptions.
-                        It allows patients to securely store and view their entire medical history, doctor visits, and
-                        lab reports
-                        in one place.
+                        prescriptions. It allows patients to securely store and view their entire medical history,
+                        doctor visits, and lab reports in one place.
                     </p>
 
                     <div class="featured-features">
@@ -563,95 +617,131 @@
                     <div class="phone-carousel">
                         <div class="phone-mockup">
                             <div class="phone-notch"></div>
-                            <div class="phone-screen">
-                                <img src="projects/medical-app-1.png" alt="Dashboard">
-                            </div>
+                            <div class="phone-screen"><img src="projects/medical-app-1.png" alt="Dashboard"></div>
                             <span class="screen-label">Home</span>
                         </div>
                         <div class="phone-mockup">
                             <div class="phone-notch"></div>
-                            <div class="phone-screen">
-                                <img src="projects/medical-app-2.png" alt="Vitals">
-                            </div>
+                            <div class="phone-screen"><img src="projects/medical-app-2.png" alt="Vitals"></div>
                             <span class="screen-label">Vitals</span>
                         </div>
                         <div class="phone-mockup">
                             <div class="phone-notch"></div>
-                            <div class="phone-screen">
-                                <img src="projects/medical-app-3.png" alt="Blood Pressure">
-                            </div>
+                            <div class="phone-screen"><img src="projects/medical-app-3.png" alt="Blood Pressure"></div>
                             <span class="screen-label">B.P. Check</span>
                         </div>
                         <div class="phone-mockup">
                             <div class="phone-notch"></div>
-                            <div class="phone-screen">
-                                <img src="projects/medical-app-4.png" alt="Glucose">
-                            </div>
+                            <div class="phone-screen"><img src="projects/medical-app-4.png" alt="Glucose"></div>
                             <span class="screen-label">Glucose</span>
                         </div>
                         <div class="phone-mockup">
                             <div class="phone-notch"></div>
-                            <div class="phone-screen">
-                                <img src="projects/medical-app-5.png" alt="Temperature">
-                            </div>
+                            <div class="phone-screen"><img src="projects/medical-app-5.png" alt="Temperature"></div>
                             <span class="screen-label">Temperature</span>
                         </div>
                         <div class="phone-mockup">
                             <div class="phone-notch"></div>
-                            <div class="phone-screen">
-                                <img src="projects/medical-app-6.png" alt="Heart Rate">
-                            </div>
+                            <div class="phone-screen"><img src="projects/medical-app-6.png" alt="Heart Rate"></div>
                             <span class="screen-label">Heart Rate</span>
                         </div>
                         <div class="phone-mockup">
                             <div class="phone-notch"></div>
-                            <div class="phone-screen">
-                                <img src="projects/medical-app-7.png" alt="Allergies">
-                            </div>
+                            <div class="phone-screen"><img src="projects/medical-app-7.png" alt="Allergies"></div>
                             <span class="screen-label">Allergies</span>
                         </div>
                         <div class="phone-mockup">
                             <div class="phone-notch"></div>
-                            <div class="phone-screen">
-                                <img src="projects/medical-app-8.png" alt="Reminders">
-                            </div>
+                            <div class="phone-screen"><img src="projects/medical-app-8.png" alt="Reminders"></div>
                             <span class="screen-label">Reminders</span>
                         </div>
                         <div class="phone-mockup">
                             <div class="phone-notch"></div>
-                            <div class="phone-screen">
-                                <img src="projects/medical-app-9.png" alt="Doctor Visit">
-                            </div>
+                            <div class="phone-screen"><img src="projects/medical-app-9.png" alt="Doctor Visit"></div>
                             <span class="screen-label">Doctor Visit</span>
                         </div>
                         <div class="phone-mockup">
                             <div class="phone-notch"></div>
-                            <div class="phone-screen">
-                                <img src="projects/medical-app-10.png" alt="Records">
-                            </div>
+                            <div class="phone-screen"><img src="projects/medical-app-10.png" alt="Records"></div>
                             <span class="screen-label">Records</span>
                         </div>
                         <div class="phone-mockup">
                             <div class="phone-notch"></div>
-                            <div class="phone-screen">
-                                <img src="projects/medical-app-11.png" alt="Settings">
-                            </div>
+                            <div class="phone-screen"><img src="projects/medical-app-11.png" alt="Settings"></div>
                             <span class="screen-label">Settings</span>
                         </div>
                         <div class="phone-mockup">
                             <div class="phone-notch"></div>
-                            <div class="phone-screen">
-                                <img src="projects/medical-app-12.png" alt="Radiology">
-                            </div>
+                            <div class="phone-screen"><img src="projects/medical-app-12.png" alt="Radiology"></div>
                             <span class="screen-label">Radiology</span>
                         </div>
                         <div class="phone-mockup">
                             <div class="phone-notch"></div>
-                            <div class="phone-screen">
-                                <img src="projects/medical-app-13.png" alt="Edit Notes">
-                            </div>
+                            <div class="phone-screen"><img src="projects/medical-app-13.png" alt="Edit Notes"></div>
                             <span class="screen-label">Edit Notes</span>
                         </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Micro-Demos Section -->
+    <section class="micro-demos section" id="micro-demos">
+        <div class="container">
+            <span class="portfolio-badge"><i class="fas fa-play-circle"></i> Live Demos</span>
+            <h2 class="section-title">Watch the <span class="highlight">AI in Action</span></h2>
+            <p class="section-subtitle">15-second GIFs showing the exact moment the AI works — no fluff, just results.</p>
+
+            <div class="demos-grid">
+                <div class="demo-card">
+                    <div class="demo-gif-wrapper">
+                        <img src="demos/receipt-scan.gif" alt="AI Receipt Scanning Demo"
+                             onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div class="demo-gif-placeholder" style="display:none;">
+                            <i class="fas fa-camera"></i>
+                            <span>ADD YOUR GIF HERE</span>
+                            <code style="font-size:0.7rem;color:#6366f1;">demos/receipt-scan.gif</code>
+                        </div>
+                        <span class="demo-badge">⚡ Live AI</span>
+                    </div>
+                    <div class="demo-card-body">
+                        <h4>📸 Receipt → Data in 3 Seconds</h4>
+                        <p>GPT-4 Vision reads a crumpled receipt photo and extracts every line item, date, and total automatically.</p>
+                    </div>
+                </div>
+
+                <div class="demo-card">
+                    <div class="demo-gif-wrapper">
+                        <img src="demos/skin-scan.gif" alt="Lumera AI Skin Scan Demo"
+                             onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div class="demo-gif-placeholder" style="display:none;">
+                            <i class="fas fa-robot"></i>
+                            <span>ADD YOUR GIF HERE</span>
+                            <code style="font-size:0.7rem;color:#6366f1;">demos/skin-scan.gif</code>
+                        </div>
+                        <span class="demo-badge">⚡ Live AI</span>
+                    </div>
+                    <div class="demo-card-body">
+                        <h4>🔬 Skin Scan → 11-Parameter Report</h4>
+                        <p>Lumera AI analyses a selfie and instantly returns acne, wrinkle, and hydration scores with personalised product picks.</p>
+                    </div>
+                </div>
+
+                <div class="demo-card">
+                    <div class="demo-gif-wrapper">
+                        <img src="demos/chatbot-reply.gif" alt="AI Chatbot Demo"
+                             onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div class="demo-gif-placeholder" style="display:none;">
+                            <i class="fas fa-comments"></i>
+                            <span>ADD YOUR GIF HERE</span>
+                            <code style="font-size:0.7rem;color:#6366f1;">demos/chatbot-reply.gif</code>
+                        </div>
+                        <span class="demo-badge">⚡ Live AI</span>
+                    </div>
+                    <div class="demo-card-body">
+                        <h4>🤖 Patient Question → Instant Answer</h4>
+                        <p>The RAG-powered chatbot answers dermatological questions in real time — no doctor needed for routine queries.</p>
                     </div>
                 </div>
             </div>
@@ -700,28 +790,20 @@
 
                 <div class="contact-form-wrapper">
                     <h3 class="form-title"><span class="highlight">Send Message</span></h3>
-                    <p class="form-subtitle">I'd love to hear from you. Send me a message and I'll respond as soon as
-                        possible.</p>
+                    <p class="form-subtitle">I'd love to hear from you. Send me a message and I'll respond as soon as possible.</p>
 
                     <form class="contact-form" id="contact-form">
                         <div class="form-group">
-                            <div class="input-icon">
-                                <i class="fas fa-user"></i>
-                            </div>
+                            <div class="input-icon"><i class="fas fa-user"></i></div>
                             <input type="text" id="name" name="name" placeholder="Your Name" required>
                         </div>
                         <div class="form-group">
-                            <div class="input-icon">
-                                <i class="fas fa-envelope"></i>
-                            </div>
+                            <div class="input-icon"><i class="fas fa-envelope"></i></div>
                             <input type="email" id="email" name="email" placeholder="your.email@example.com" required>
                         </div>
                         <div class="form-group">
-                            <div class="input-icon textarea-icon">
-                                <i class="fas fa-comment"></i>
-                            </div>
-                            <textarea id="message" name="message" rows="5" placeholder="Your message here..."
-                                required></textarea>
+                            <div class="input-icon textarea-icon"><i class="fas fa-comment"></i></div>
+                            <textarea id="message" name="message" rows="5" placeholder="Your message here..." required></textarea>
                         </div>
                         <button type="submit" class="btn btn-primary btn-full">
                             Send Message <i class="fas fa-paper-plane"></i>
@@ -759,6 +841,5 @@
 
     <script src="script.js"></script>
 </body>
-
 
 </html>
